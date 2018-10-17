@@ -1,0 +1,50 @@
+import os as sis
+
+#start program
+print("welcome to program data base\n")
+a=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created \n")
+if a=="i":#import sistem 
+    name=input("write program's name here \n")
+    prg=open(name+".txt", "w+")#create new file 
+    lis=open("list.txt", "w+")
+    lis.write(name+"\n")
+    lis.close()
+    prg.write("name="+name+"\n")
+    b=input("insert program type \n")
+    prg.write("type="+b+"\n")
+    b3=input("insert program description \n")
+    prg.write("desc.prog="+b3+"\n")
+    b2=input("insert start dev data \n")
+    prg.write("startdev="+b2+"\n")
+    prg.close()
+
+elif a=="s":
+    g=open("list.txt", "r")
+    lil=g.read()
+    print("this is infos existing")
+    print(lil)
+    g.close()
+    name=input("write program name \n")
+    prg=open(name+".txt", "r")
+    red= prg.read()
+    print(red )
+    input("press any button to continue")
+elif a=="d":
+    g=open("list.txt", "r")
+    lil=g.read()
+    print("this is infos existing")
+    print(lil)
+    g.close()
+    name=input("insert program name. \n")
+    sis.remove(name+".txt")
+    g=open("list.txt", "r+")
+    oldname=g.read()
+    g.close()
+    newname=oldname.replace(name, "")
+    newname.strip()
+    g2=open("list.txt", "w+")
+    g2.write(newname)
+    g2.close()
+else:
+     print("error, you have insert wrong letter, program shutting down, bye")
+     input("press any key to continue.")
