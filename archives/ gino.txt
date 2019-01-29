@@ -1,0 +1,5 @@
+name= gino
+type=tool
+version=3.0
+start dev=oggi
+description=e una prova

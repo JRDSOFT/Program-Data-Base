@@ -1,0 +1,5 @@
+name= try
+type=cos
+version=a
+start dev=d
+description=s

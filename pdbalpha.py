@@ -1,24 +1,32 @@
-import os as sis
-
-#start program
-print("welcome to program data base\n")
-a=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created \n")
-if a=="i":#import sistem 
-    name=input("write program's name here \n")
-    prg=open(name+".txt", "w+")#create new file 
+import os as sis #import sistem command like cmd
+#this function import info into one file
+#import list for this function.
+def listar(): #this function add voice in list
     lis=open("list.txt", "w+")
     lis.write(name+"\n")
     lis.close()
-    prg.write("name="+name+"\n")
-    b=input("insert program type \n")
-    prg.write("type="+b+"\n")
-    b3=input("insert program description \n")
-    prg.write("desc.prog="+b3+"\n")
-    b2=input("insert start dev data \n")
-    prg.write("startdev="+b2+"\n")
+   
+
+#start program
+print("welcome to program data base\n")#title screen
+a=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created \n")# instuction for use program
+if a=="i":#import sistem, a= is a char and is use for insert an input for if, elif and else.
+    name=input("write program's name here \n")#name is a variable where you find a program's name
+    listar()
+    prg=open(name+".txt", "w+")#create new file where import program's info
+    prg.write("name="+name+"\n")#import name
+    nar=["program type", "program description", "start dev data"]
+    nar2=["type", "desc.prog", "startdev"]
+    for i=="2":
+        i="0"
+        b=input("insert"+nar.pop(i)+"\n")#give a output then insert a type program, the info will save on b variable 
+        i=+1
+    if:
+        prg.write(nar2+"="+b+"\n")#write on the file the info that contained on b
     prg.close()
 
-elif a=="s":
+
+elif a=="s": #display all file and infos of one file
     g=open("list.txt", "r")
     lil=g.read()
     print("this is infos existing")
@@ -29,7 +37,7 @@ elif a=="s":
     red= prg.read()
     print(red )
     input("press any button to continue")
-elif a=="d":
+elif a=="d":# del one file than you have created
     g=open("list.txt", "r")
     lil=g.read()
     print("this is infos existing")
@@ -48,3 +56,10 @@ elif a=="d":
 else:
      print("error, you have insert wrong letter, program shutting down, bye")
      input("press any key to continue.")
+
+#debug log:
+#   find a for o while loop, array and lists/dictionary.
+#   insert a 4th option, modify option.
+#   insert "stop dev" and "status" voices.
+#-------------------------------------------------
+#Copyright (c) 2018 JRDSOFT All rights reserved.
