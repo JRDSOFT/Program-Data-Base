@@ -2,7 +2,7 @@ from collections import deque# this import piles module
 #this part is reserved for the functions for the programm
 def update_list(): #make/update list for see the archives then we made
     date=open("list.txt", "w+")#open file list
-    date.writelines(name_file+"\n")#write archive's name on file 
+    date.write(name_file+"\n")#write archive's name on file 
     date.close()#close file
 
 def imp_file(): #this function can be used only for insert function
@@ -15,6 +15,10 @@ def imp_file(): #this function can be used only for insert function
             base.write(cos2.popleft()+a2+"\n")
         base.close()
 
+def repeat():
+        name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
+        update_list()
+        imp_file()
 
 #main menu
 print("welcome to vault ver:1.1\n")#title screen
@@ -23,12 +27,16 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
         update_list()
         imp_file()
- #       ans2=input("do you want insert another archive?\nWrite Y for add another archive")
-#    print("done, see ya\n")
- #   input("press any key to close programm.")
+        print("done\n")
+        ans2=input("do you want insert another file? Y/N\n")
+        while ans2 =="y":
+                repeat()
+                ans2=input("do you want insert another file? Y/N\n")
+
+        input("bye")
 else:
-     print("command error, shutting down, bye")
-     input("press any key to continue.")
+     input("command error, shutting down, bye")
+
 #debug log:
 #   mantenere nomi su file list.txt.
 #   conferma inserimento dati.
