@@ -1,5 +1,0 @@
-name= s
-type=s
-version=s
-start dev=s
-description=s

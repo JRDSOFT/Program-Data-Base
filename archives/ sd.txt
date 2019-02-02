@@ -1,5 +1,0 @@
-name= sd
-type=ad
-version=s
-start dev=s
-description=s

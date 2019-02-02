@@ -1,5 +1,0 @@
-name= sadf
-type=a
-version=a
-start dev=a
-description=a

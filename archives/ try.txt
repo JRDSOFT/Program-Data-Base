@@ -1,5 +1,0 @@
-name= try
-type=gdsgf
-version=fdsg
-start dev=sgf
-description=sg

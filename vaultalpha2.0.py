@@ -1,4 +1,5 @@
 from collections import deque# this import piles module
+import datetime#import date 
 #this part is reserved for the functions for the programm
 def update_list(): #make/update list for see the archives then we made
     date=open("list.txt", "w+")#open file list
@@ -6,41 +7,66 @@ def update_list(): #make/update list for see the archives then we made
     date.close()#close file
 
 def imp_file(): #this function can be used only for insert function
-        cos = deque (["type:", "version:", "start dev:", "description:"])#this  print out all words on the pile
-        cos2 = deque (["type=", "version=", "start dev=", "description="])#it's used on base.write
+        cos = deque (["type:", "version:", "description:",])#this  print out all words on the pile
+        cos2 = deque (["type=", "version=", "description="])#it's used on base.write
         base=open("archives\ "+name_file+".txt", "w+")#create archive
-        base.write("name= "+name_file+"\n")
-        for allforone in range(4):
-            a2=input("insert "+cos.popleft()+"\n")
-            base.write(cos2.popleft()+a2+"\n")
-        base.close()
+        base.write("name= "+name_file+"\n")#insert archive name on file list.txt
+        for allforone in range(3):#repeat loop for print same message but with a differend words
+            a2=input("insert "+cos.popleft()+"\n")#print same message but with a differend words
+            base.write(cos2.popleft()+a2+"\n")#write info on file.txt but with a differend words
+        base.write("start dev= "+datetime.datetime.now())
+        base.close()#close file
 
-def repeat():
+def rep_ins():
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
-        update_list()
-        imp_file()
+        update_list()#recall update list function 
+        imp_file()#recall import file funcition
+        
+def rep_see():
+    show_list()
+    temp=input("insert name archive print now on screen \n")
+    show()
+
+def show_list():
+    print_list=open("list.txt", "r+")
+    red=print_list.read()
+    print(red)
+    print_list.close()
+
+def show():
+    print_info=open("archives\ "+temp+".txt", "r+" )
+    for allforone in range(4):
+        red=print_info.readline()
+        print(red)
+    print_info.close
 
 #main menu
 print("welcome to vault ver:1.1\n")#title screen
 ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created \n")# ans is used for select one of 4 options avariable
 if ans1=="i":#1°option, import all informations and will save in a file.txt
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
-        update_list()
-        imp_file()
-        print("done\n")
-        ans2=input("do you want insert another file? Y/N\n")
+        update_list()#recall update list function 
+        imp_file()#recall import file funcition
+        print("done\n")#print done message
+        ans2=input("do you want insert another file? Y/N\n")#ask to user if he/she want insert another file
         while ans2 =="y":
-                repeat()
-                ans2=input("do you want insert another file? Y/N\n")
+                rep_ins()#recall repeat_ins function
+                ans2=input("do you want insert another file? Y/N\n")#ask to user if he/she want insert another file
+        input("bye")#print bye and the programm stop working
+elif ans1 =="s":#2°option, print list.txt and print all informations that had saved on a archive
+        show_list()#print list
+        temp=input("insert name archive print now on screen \n")#user insert archive name
+        show()#print all info saved on file.txt
+        ans2=input("do you want to see another file? Y/N\n")#ask to user if he/she want see another file
+        while ans2 =="y":
+                    rep_see()#repeat prewious work
+                    ans2=input("do you want to see another file? Y/N\n")#ask again to user if he/she want see another file
+        input("bye")#programm stop
 
-        input("bye")
 else:
-     input("command error, shutting down, bye")
+     input("command error, shutting down, bye")#print this message when the user insert wrong letter
 
 #debug log:
-#   mantenere nomi su file list.txt.
-#   conferma inserimento dati.
-#   ripetizione inserimento dati nel caso l'utente voglia inserire altri dati
 #   inserire voci STOP DEV e STATUS in modifica.
 #   inserire la seconda opzione, visualizzazione dati.
 #   inserire terza opzione, modifica file.

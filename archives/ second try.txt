@@ -1,0 +1,5 @@
+name= second try
+type=second try
+version=second try
+start dev=second try
+description=second try
