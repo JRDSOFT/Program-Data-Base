@@ -9,7 +9,7 @@ def update_list(): #make/update list for see the archives then we made
 def imp_file(): #this function can be used only for insert function
         cos = deque (["type:", "version:", "description:",])#this  print out all words on the pile
         cos2 = deque (["type=", "version=", "description="])#it's used on base.write
-        base=open("archives/ "+name_file+".txt", "w+")#create archive
+        base=open("archives/ "+name_file+".txt", "x+")#create archive
         base.write("name="+name_file+"\n")#insert archive name on file list.txt
         for allforone in range(3):#repeat loop for print same message but with a differend words
             a2=input("insert "+cos.popleft()+"\n")#print same message but with a differend words
