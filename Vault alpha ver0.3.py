@@ -1,8 +1,9 @@
+#this part is reserved for modules
 from collections import deque# this import piles module
-from datetime import datetime#import date 
+from datetime import datetime#import date
+import os#import command os 
+
 #this part is reserved for the functions for the programm
-
-
 def update_list(): #make/update list for see the archives then we made
     date=open("list.txt", "w+")#open file list
     date.write(name_file+"\n")#write archive's name on file 
@@ -50,7 +51,7 @@ def show():#print infos
     print_info.close
 
 #main menu
-print("welcome to vault ver:1.1\n")#title screen
+print("Welcome to Vault ver0.1\n")#title screen
 ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created. \npress E for exit.\n")# ans is used for select one of 4 options avariable
 if ans1=="i":#1°option, import all informations and will save in a file.txt
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
@@ -83,12 +84,21 @@ elif ans1 =="s":#2°option, print list.txt and print all informations that had s
                     ans2=input("do you want to see another file? Y/N\n")#ask again to user if he/she want see another file
         input("bye")#print bye and the programm stop working
 
+# elif  ans1=="d":#deled one archive.txt
+#     show_list()
+#     temp_del=input("insert name archive print now on screen \n")
+#     os.system("\\archives\\ "temp_del+".txt")
+#     input("done")
+    
+
+#elif  ans1=="e":#exit the programm
+#    input("see ya.")
+
 else:
      input("command error, shutting down, bye")#print this message when the user insert wrong letter
 
 #debug log:
 #   inserire voci STOP DEV e STATUS in modifica.
-#   inserire la seconda opzione, visualizzazione dati.
 #   inserire terza opzione, modifica file.
 #   inserire quarta opzione, cancellazione file.
 #   
