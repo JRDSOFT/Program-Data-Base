@@ -101,6 +101,7 @@ else:
 #   inserire voci STOP DEV e STATUS in modifica.
 #   inserire terza opzione, modifica file.
 #   inserire quarta opzione, cancellazione file.
+#   change most of if statements with switch statements
 #   
 #-------------------------------------------------
 #Copyright (c) 2018 JRDSOFT All rights reserved.
