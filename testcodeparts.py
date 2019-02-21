@@ -1,5 +1,6 @@
 from collections import deque# this import piles module
-from datetime import datetime#import date 
+from datetime import datetime#import date
+import os, platform# for use terminal/cmd commands
 #this part is reserved for the functions for the programm
 
 
@@ -12,7 +13,10 @@ def imp_file(): #this function can be used only for insert function
         cos = deque (["type:", "version:", "description:",])#this  print out all words on the pile
         cos2 = deque (["type= ", "version= ", "description= "])#it's used on base.write
         try:
-            base=open("archives\\ "+name_file+".txt", "x+")#create archive
+            if platform.system()=="Windows":
+                base=open("archives\\ "+name_file+".txt", "x+")#create archive
+            elif platform.system()=="Linux":
+                base=open("archives/ "+name_file+".txt", "x+")#create archive
         except FileExistsError:#check if the file exist
             print("error, file exist")
         else:
@@ -43,16 +47,24 @@ def show_list():#print list.txt
     print_list.close()
 
 def show():#print infos
+    clearshell()
     print_info=open("archives\\ "+temp+".txt", "r+" )
-    for allforone in range(5):
+    for allforone in range(6):
         red=print_info.readline()
         print(red)
     print_info.close
 
+def clearshell():#clear shell
+    if platform.system()=="Windows":
+        os.system("cls")
+    elif platform.system()=="Linux":
+        os.system("clear")
 #main menu
 print("welcome to vault ver:1.1\n")#title screen
-ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created. \npress E for exit.\n")# ans is used for select one of 4 options avariable
+ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created.\npress E to edit program's infos already created.\npress E for exit.\n")# ans is used for select one of 4 options avariable
+
 if ans1=="i":#1°option, import all informations and will save in a file.txt
+        clearshell()
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
         imp_file()#recall import file funcition
         update_list()#recall update list function
@@ -60,6 +72,7 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
         print("done\n")#print done message
         ans2=input("do you want insert another file? Y/N\n")#ask to user if he/she want insert another file
         while ans2 =="y":
+                clearshell()
                 del name_file
                 name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
                 rep_ins()#recall repeat_ins function
@@ -67,6 +80,7 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
         temp=name_file
         ans3 =input("do you want see file already created? Y/N\n")
         if ans3 == "y":
+            clearshell()
             show()
             input("done, bye")#print info already created and print bye, the programm stop working
         else:
@@ -74,14 +88,19 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
 
 
 elif ans1 =="s":#2°option, print list.txt and print all informations that had saved on a archive
+        clearshell()
         show_list()#print list
         temp=input("insert name archive print now on screen \n")#user insert archive name
         show()#print all info saved on file.txt
         ans2=input("do you want to see another file? Y/N\n")#ask to user if he/she want see another file
         while ans2 =="y":
+                    clearshell()
                     rep_see()#repeat prewious work
                     ans2=input("do you want to see another file? Y/N\n")#ask again to user if he/she want see another file
         input("bye")#print bye and the programm stop working
+
+elif ans1 =="e":#3°option, open list.txt and edit all informations that had saved on a archive
+    show_list()#print list
 
 else:
      input("command error, shutting down, bye")#print this message when the user insert wrong letter
