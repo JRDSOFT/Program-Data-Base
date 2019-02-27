@@ -5,6 +5,7 @@ import os, platform# for use terminal/cmd commands
 
 
 def update_list(): #make/update list for see the archives then we made
+
     date=open("list.txt", "w+")#open file list
     date.write(name_file+"\n")#write archive's name on file 
     date.close()#close file
@@ -60,9 +61,8 @@ def clearshell():#clear shell
     elif platform.system()=="Linux":
         os.system("clear")
 #main menu
-
-        print(("""\
-         ██▒   █▓ ▄▄▄       █    ██  ██▓  ▄▄▄█████▓
+print("""\
+ ██▒   █▓ ▄▄▄       █    ██  ██▓  ▄▄▄█████▓
 ▓██░   █▒▒████▄     ██  ▓██▒▓██▒  ▓  ██▒ ▓▒
  ▓██  █▒░▒██  ▀█▄  ▓██  ▒██░▒██░  ▒ ▓██░ ▒░
   ▒██ █░░░██▄▄▄▄██ ▓▓█  ░██░▒██░  ░ ▓██▓ ░ 
@@ -73,12 +73,24 @@ def clearshell():#clear shell
       ░        ░  ░   ░         ░  ░       
      ░                                     
 
-                """)
-    #title screen
+""")#title screen
 ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created.\npress E to edit program's infos already created.\npress E for exit.\n")# ans is used for select one of 4 options avariable
 
 if ans1=="i":#1°option, import all informations and will save in a file.txt
         clearshell()
+        print("""\
+ ▄█    ▄▄▄▄███▄▄▄▄      ▄███████▄  ▄██████▄     ▄████████     ███     
+███  ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███   ███    ███ ▀█████████▄ 
+███▌ ███   ███   ███   ███    ███ ███    ███   ███    ███    ▀███▀▀██ 
+███▌ ███   ███   ███   ███    ███ ███    ███  ▄███▄▄▄▄██▀     ███   ▀ 
+███▌ ███   ███   ███ ▀█████████▀  ███    ███ ▀▀███▀▀▀▀▀       ███     
+███  ███   ███   ███   ███        ███    ███ ▀███████████     ███     
+███  ███   ███   ███   ███        ███    ███   ███    ███     ███     
+█▀    ▀█   ███   █▀   ▄████▀       ▀██████▀    ███    ███    ▄████▀   
+                                               ███    ███             
+
+""")
+     
         name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
         imp_file()#recall import file funcition
         update_list()#recall update list function
@@ -87,6 +99,19 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
         ans2=input("do you want insert another file? Y/N\n")#ask to user if he/she want insert another file
         while ans2 =="y":
                 clearshell()
+                print("""\
+ ▄█    ▄▄▄▄███▄▄▄▄      ▄███████▄  ▄██████▄     ▄████████     ███     
+███  ▄██▀▀▀███▀▀▀██▄   ███    ███ ███    ███   ███    ███ ▀█████████▄ 
+███▌ ███   ███   ███   ███    ███ ███    ███   ███    ███    ▀███▀▀██ 
+███▌ ███   ███   ███   ███    ███ ███    ███  ▄███▄▄▄▄██▀     ███   ▀ 
+███▌ ███   ███   ███ ▀█████████▀  ███    ███ ▀▀███▀▀▀▀▀       ███     
+███  ███   ███   ███   ███        ███    ███ ▀███████████     ███     
+███  ███   ███   ███   ███        ███    ███   ███    ███     ███     
+█▀    ▀█   ███   █▀   ▄████▀       ▀██████▀    ███    ███    ▄████▀   
+                                               ███    ███             
+
+""")
+     
                 del name_file
                 name_file=input("insert name archive:\n")#user insert name's file and will save on file .txt
                 rep_ins()#recall repeat_ins function
@@ -95,6 +120,21 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
         ans3 =input("do you want see file already created? Y/N\n")
         if ans3 == "y":
             clearshell()
+            print("""\
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄ 
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌
+▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌
+▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌
+▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌   ▄   ▐░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌
+ ▀▀▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌ ▐░▌░▌ ▐░▌
+          ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌
+ ▄▄▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌
+ ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀ 
+                                                    
+""")
+     
             show()
             input("done, bye")#print info already created and print bye, the programm stop working
         else:
@@ -103,12 +143,42 @@ if ans1=="i":#1°option, import all informations and will save in a file.txt
 
 elif ans1 =="s":#2°option, print list.txt and print all informations that had saved on a archive
         clearshell()
+        print("""\
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄ 
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌
+▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌
+▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌
+▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌   ▄   ▐░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌
+ ▀▀▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌ ▐░▌░▌ ▐░▌
+          ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌
+ ▄▄▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌
+ ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀ 
+                                                    
+""")
+     
         show_list()#print list
         temp=input("insert name archive print now on screen \n")#user insert archive name
         show()#print all info saved on file.txt
         ans2=input("do you want to see another file? Y/N\n")#ask to user if he/she want see another file
         while ans2 =="y":
                     clearshell()
+                    print("""\
+ ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄ 
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌
+▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌
+▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌
+▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░▌   ▄   ▐░▌
+▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌
+ ▀▀▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌       ▐░▌▐░▌ ▐░▌░▌ ▐░▌
+          ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌
+ ▄▄▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌░▌   ▐░▐░▌
+▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌
+ ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀       ▀▀ 
+                                                    
+""")
+     
                     rep_see()#repeat prewious work
                     ans2=input("do you want to see another file? Y/N\n")#ask again to user if he/she want see another file
         input("bye")#print bye and the programm stop working
