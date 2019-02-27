@@ -1,5 +1,0 @@
-name= fkjhgk
-type= i';[
-version= lpok'
-description= kjpoiu
-start dev= 07-02-2019

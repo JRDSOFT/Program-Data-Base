@@ -1,5 +1,5 @@
-name= ok
-type= try
-version= v01
-description= it's a try
-start dev= 06-02-2019
+|+name= ok
+|+type = 
+|+version = 
+|+description = 
+|+start dev= 27-02-2019
