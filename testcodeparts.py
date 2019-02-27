@@ -60,7 +60,21 @@ def clearshell():#clear shell
     elif platform.system()=="Linux":
         os.system("clear")
 #main menu
-print("welcome to vault ver:1.1\n")#title screen
+
+        print(("""\
+         ██▒   █▓ ▄▄▄       █    ██  ██▓  ▄▄▄█████▓
+▓██░   █▒▒████▄     ██  ▓██▒▓██▒  ▓  ██▒ ▓▒
+ ▓██  █▒░▒██  ▀█▄  ▓██  ▒██░▒██░  ▒ ▓██░ ▒░
+  ▒██ █░░░██▄▄▄▄██ ▓▓█  ░██░▒██░  ░ ▓██▓ ░ 
+   ▒▀█░   ▓█   ▓██▒▒▒█████▓ ░██████▒▒██▒ ░ 
+   ░ ▐░   ▒▒   ▓▒█░░▒▓▒ ▒ ▒ ░ ▒░▓  ░▒ ░░   
+   ░ ░░    ▒   ▒▒ ░░░▒░ ░ ░ ░ ░ ▒  ░  ░    
+     ░░    ░   ▒    ░░░ ░ ░   ░ ░   ░      
+      ░        ░  ░   ░         ░  ░       
+     ░                                     
+
+                """)
+    #title screen
 ans1=input("press I for import program's infos.\npress S to see program's infos already created.\npress D to delete program's infos already created.\npress E to edit program's infos already created.\npress E for exit.\n")# ans is used for select one of 4 options avariable
 
 if ans1=="i":#1°option, import all informations and will save in a file.txt
