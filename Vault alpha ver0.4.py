@@ -179,3 +179,12 @@ elif ans1=="e":
 
 else:
         print("|+work in proggress")
+#debug log:
+#   inserire voci STOP DEV e STATUS in modifica.
+#   inserire terza opzione, modifica file.
+#   inserire quarta opzione, cancellazione file.
+#   change most of if statements with switch statements
+#   studiare libreria DB per python
+#
+#-------------------------------------------------
+#Copyright (c) 2018 JRDSOFT All rights reserved.
